@@ -24,6 +24,17 @@ public class SearchInventory {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
             String line;
 
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] info = line.split("\\|");
+
+                int id = Integer.parseInt(info[0]);
+                String name = info[1];
+                float price = Float.parseFloat(info[2]);
+
+                Product product = new Product(id, name, price);
+                inventory.add(product);
+            }
+
 
 
         } catch (Exception ex) {
