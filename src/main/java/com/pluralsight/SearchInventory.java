@@ -7,7 +7,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class SearchInventory {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         ArrayList<Product> inventory = getInventory();
         for (Product product : inventory) {
             System.out.println(product);
@@ -34,6 +34,8 @@ public class SearchInventory {
                 Product product = new Product(id, name, price);
                 inventory.add(product);
             }
+
+            bufferedReader.close();
 
 
 
